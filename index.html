@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Услуги и сервисы CPS</title>
+  <style>
+    body {
+      font-family: 'TTLakes', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #222;
+    }
+
+    .services {
+      padding: 18px;
+    }
+
+    .services__title {
+      
+      font-size: 35px;
+      margin-left: 20px;
+      margin-bottom: 25px;
+    }
+
+    .services__nav {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .services__tab {
+      margin-left: 22px;
+      font-size: 16px;
+      white-space: nowrap;
+      padding: 10px 50px;
+      border: none;    
+      background-color: #fff;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .services__tab--active {
+      border: 1px solid #00cc99;
+      border-radius: 5px;
+      border-color: #00cc99;
+      background-color: white ;
+      padding: 10px 50px;
+      margin-left: 40px;
+    }
+
+    .services__content {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .services__content--visible {
+      display: flex;
+    }
+
+    .services__text {
+      font-size: 19px;
+      width: 34%;
+      line-height: 1.4;
+      margin-top: -10px;
+      margin-left: 50px;
+    }
+
+    .services__read-more {
+      color: #000;
+      font-weight: bold;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    
+    header {
+      display: none;
+    }
+    .ji {
+      display: block;
+      font-size: 20px;
+      margin-left: 1310px;
+      margin-top: -50px;
+    }
+    .gh {
+      display: block;
+      font-size: 20px;
+      margin-left: 1630px;
+      margin-top: -50px;
+    }
+    .more-text {
+      display: block;
+      margin-top: -30px;
+      margin-left: 50px;
+      width: 33%;
+      font-size: 18px;
+    }
+    .read-more-btn {
+      color: black;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px; 
+      margin-top: -2px;
+      margin-left: 90px;
+      font-size: 19px;
+      position: relative;
+    } 
+    .services__image {
+      width: 1000px;
+      margin-top: -10px;
+      margin-left: 1200px;
+      position: fixed;
+      display: flex;
+      left: -350px;
+    }
+
+    .cz {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      margin-left: -40px;
+      margin-top: -35px;
+      position: static; 
+}
+    .rotate {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+}
+    .jy {
+      margin-top: 50px;
+      margin-left: 90px;
+      color: gray;
+    }
+   @font-face {
+     font-family: 'TTLakes';
+     src: url('/Shrift/TTLakes-Regular.woff') format('woff');
+     font-weight: 400;
+     font-style: normal;
+     font-display: swap;
+}
+
+    @media (max-width: 768px) {
+    .more-text {
+      display: none;
+      margin-top: -30px;
+      margin-left: 20px;
+      width: 39%;
+      font-size: 15px;
+    }
+
+    .read-more-btn {
+      color: black;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: -15px;
+      margin-left: 55px;
+      font-size: 16px;
+      
+    }
+    .services__image {
+      width: 400px;
+      margin-top: 9px;
+      margin-left: 691px;
+      position:fixed;
+      display: flex;
+      left: -350px;
+    }
+
+    .services__text {
+      margin-top: -2px;
+      margin-left: 20px; 
+      width: 35%;
+      font-size: 15px;
+    }
+    .cx {
+      margin-left: -120px;
+    }
+    .kl {
+      margin-left: 35px;
+    }
+    .cz {
+      display:inline-block;
+      margin-top: -35px;
+      margin-left: -36px;
+      width: 25px;
+      height: 25px;
+    }
+     header {
+      background: white;
+      display: flex;
+      align-items: center;
+      padding: 30px 20px;
+      border-bottom: 1px solid #00cc99;
+    }
+    .ji, .gh {
+      display: none;
+    }
+    .highlight {
+      margin-top: 117px;
+      margin-left: -1px;
+    }
+    .jy {
+      display: none;
+    }
+  }
+   @media (max-width: 425px) {
+      .services__nav {
+        flex-direction: row;
+      }
+      .services__text {
+        width: 75%;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+      .services__read-more {
+        font-size: 21px;
+        padding: 2px 40px;
+        display: flex;
+        margin-top: -70px;
+      }
+      .nb {
+        height: 55px;
+      }   
+      .kl {
+        height: 69px;
+        margin-left: 30px;
+        margin-top: -5px;
+      }  
+      .nc {
+        margin-left: -378px;
+        height: 55px;
+      }
+      .cf {
+        margin-left: -360px;
+        height: 55px;
+      }
+      .services__title {
+        margin-left: 5px;
+      }
+      .more-text {
+      margin-top: -30px;
+      margin-left: 20px;
+      width: 90%;
+      font-size: 18px;
+    }
+
+    .read-more-btn {
+      color: black;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: -13px;
+      margin-left: 60px;
+      font-size: 19px;
+    }
+    .cz { 
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-left: -30px;
+      margin-top: -30px;
+    }
+    header {
+      background: white;
+      display: flex;
+      align-items: center;
+      padding: 30px 20px;
+      border-bottom: 1px solid #00cc99;
+    }
+    .ji, .gh {
+      display: none;
+    
+    }
+    .icon3 {
+      margin-left: -20px;
+    }
+    .icon2 {
+      margin-left: 140px;
+    }
+    .services__image {
+      width: 427px;
+      margin-left: 351px;
+      margin-top: 25px;
+      position:relative;
+    }
+    .highlight {
+      margin-top: 129px;
+      margin-left: -1px;
+    }
+    .jy {
+      display: none;
+    }
+  }
+
+
+    
+
+  
+  
+  </style>
+</head>
+<body>
+  <header>
+    <div class="icon"><img src="img/burger.png" class="nb"></div>
+    <div class="icon3"><img src="img/Group (1).png" class="kl"></div>
+    <div class="icon2"><img src="img/divider.png" class="cx"></div>
+    <div class="icon6"><img src="img/call.png" style="z-index: 1; position: absolute; left: 440px; top: 36px;"></div>
+    <div class="icon7"><img src="img/chat.png" style="z-index: 1; position: absolute; left: 496px; top: 36px;"></div>
+    <div class="icon8"><img src="img/profile.png" style="z-index: 1; position: absolute; left: 550px; top: 36px;"></div>
+    <div class="icon9"><img src="img/divider.png" width="3" height="32" style="z-index: 1; position: absolute; top: 38px; left: 620px; "></div>
+    <div class="icon4"><img src="img/repair.png" class="nc" style="z-index: 1; position: absolute; left: 650px; top: 36px;"></div>
+    <div class="icon5"><img src="img/checkstatus.png" class="cf" style="z-index: 1; position: absolute; left: 710px; top: 36px;"></div>
+  </header>
+  <div class="services">
+    <h2 class="services__title">Услуги и сервисы</h2>
+    <img src="img/highlight (1).png" class="highlight" width="3"  style="z-index: 1; position: absolute; top: 50px; left: 1px;">
+  </div>
+  <div class="ht">
+    <h4 class="ji">Оставить заявку <img src="img/repair.png" width="43" height="43" style="z-index: 1; position: absolute; top: 70px; left: 1488px;"></h4>
+    <h4 class="gh">Статус ремонта <img src="img/checkstatus.png" width="45" height="43" style="z-index: 1; position: absolute; top: 70px; left: 1797px;"></h4>
+  </div>
+    <nav class="services__nav" id="servicesTabs">
+      <button class="services__tab services__tab--active" data-tab="devices">Ремонтируемые бренды</button>
+      <button class="services__tab" data-tab="rfdd">Ремонтируемые устройства</button>
+      <button class="services__tab" data-tab="extra">Дополнительные услуги</button>
+      <button class="services__tab" data-tab="prices">Цены на услуги</button>
+      <button class="services__tab" data-tab="ggfgfg">Адреса сервисных центров</button>
+      <button class="services__tab" data-tab="special">Специальные цены</button>
+    </nav>
+    <h3 class="jy">Отзывы</h3>
+
+    <div class="services__content services__content--visible" id="tab-devices">
+      <div class="services__text">
+        <p>Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
+     </div>
+     <div id="moreText" class="more-text">
+    <p>
+      Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
+    </p>
+  </div>
+      <span id="readMoreBtn" class="read-more-btn">
+      <img src="img/expand.png" class="cz" id="expandIcon" width="20" height="20" style="z-index: 1; position: absolute; top: 30px;" />
+      <span id="readMoreText">Читать далее</span>
+ </span>
+      <img src="img/_MG_3223.svg" alt="CPS логотип" class="services__image"/>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.services__tab');
+    const contents = document.querySelectorAll('.services__content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from tabs
+        tabs.forEach(t => t.classList.remove('services__tab--active'));
+        tab.classList.add('services__tab--active');
+
+        // Hide all contents
+        contents.forEach(content => content.classList.remove('services__content--visible'));
+
+        // Show selected content
+        const selectedId = `tab-${tab.dataset.tab}`;
+        const selectedContent = document.getElementById(selectedId);
+        if (selectedContent) {
+          selectedContent.classList.add('services__content--visible');
+        }
+      });
+    });
+    const readMoreBtn = document.getElementById('readMoreBtn');
+    const readMoreText = document.getElementById('readMoreText');
+    const expandIcon = document.getElementById('expandIcon');
+    const moreText = document.getElementById('moreText');
+
+  readMoreBtn.addEventListener('click', () => {
+  const isHidden = moreText.style.display === 'none' || moreText.style.display === '';
+
+  if (isHidden) {
+    moreText.style.display = 'block';
+    readMoreText.textContent = 'Скрыть';
+    expandIcon.classList.add('rotate');
+  } else {
+    moreText.style.display = 'none';
+    readMoreText.textContent = 'Читать далее';
+    expandIcon.classList.remove('rotate');
+  }
+});
+  </script>
+</body>
+</html>
